@@ -1,4 +1,4 @@
-package com.example.businesscard
+package com.pemrogramanmobile.businesscard
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -27,15 +27,15 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.businesscard.ui.theme.BusinessCardTheme
-import com.pemrogramanmobile.businesscard.R
+import com.pemrogramanmobile.businesscard.ui.theme.BusinesscardTheme
 
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            BusinessCardTheme {
+
+            BusinesscardTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -50,7 +50,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun BusinessCard() {
-    val image = painterResource(id = R.drawable.logo)
+    val image = painterResource(id = R.drawable.bg)
     Box {
         Image(
             painter = image,
@@ -68,7 +68,7 @@ fun BusinessCard() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
         ) {
-            val image = painterResource(id = R.drawable.background)
+            val image = painterResource(id = R.drawable.logo)
             Image(
                 painter = image,
                 contentDescription = null,
@@ -107,7 +107,8 @@ fun BusinessCard() {
                 Image(
                     painter = icon,
                     contentDescription = null,
-                    modifier = Modifier.padding(start = 60.dp)
+                    modifier = Modifier
+                        .padding(start = 60.dp)
                         .height(20.dp)
                         .width(20.dp)
                 )
@@ -127,7 +128,8 @@ fun BusinessCard() {
                 Image(
                     painter = icon3,
                     contentDescription = null,
-                    modifier = Modifier.padding(start = 60.dp)
+                    modifier = Modifier
+                        .padding(start = 60.dp)
                         .height(20.dp)
                         .width(20.dp)
                 )
@@ -141,11 +143,12 @@ fun BusinessCard() {
                 .fillMaxWidth()
                 .padding(start = 40.dp),)
             {
-                val icon2 = painterResource(id = R.drawable.email)
+                val icon2 = painterResource(R.drawable.email)
                 Image(
                     painter = icon2,
                     contentDescription = null,
-                    modifier = Modifier.padding(start = 60.dp)
+                    modifier = Modifier
+                        .padding(start = 60.dp)
                         .height(20.dp)
                         .width(20.dp)
                 )
@@ -163,10 +166,9 @@ fun BusinessCard() {
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun DefaultPreview(){
-    BusinessCardTheme {
+fun PreviewBusinessCard() {
+    BusinesscardTheme {
         BusinessCard()
     }
 }
-
 
